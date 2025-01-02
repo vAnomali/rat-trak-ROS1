@@ -15,6 +15,56 @@ This system enhances the yield of research data while reducing overhead costs an
 
 ---
 
+## Installation
+To Set up and run the **Rat Trak** system, follow these steps:
+
+### Prerequisites
+Before starting, ensure you have the following installed on your system:
+- **Ubuntu 20.04 or 22.04**
+- **ROS** (This has only been tested on ROS1 Noetic)
+- **Python 3.8+**
+- **pip** (Python package manager)
+- **OpenCV** for image processing: `pip install opencv-python`
+
+### Hardware Requirements
+- **High-Speed Camera**: Ensure it is compatible with the system's software.
+- **Timing Belt Gantry System**: Properly install and calibrate the gantry for smooth movement.
+- **Secondary Tracking Camera**: Mount and align it to monitor the rat's movement accurately.
+
+### Software Installation
+1. SparkCan Setup
+``` bash
+sudo apt update
+sudo apt upgrade
+sudo apt install git cmake
+sudo add-apt-repository ppa:graysonarendt/sparkcan
+sudo apt update
+sudo apt install sparkcan
+
+git clone https://github.com/grayson-arendt/sparkcan-examples.git
+cd sparkcan-examples/
+
+chmod +x canable_start.sh
+./canable_start.sh
+
+mkdir build
+cd build
+cmake ..
+make
+```
+
+2. Rat-Trak Installation
+```bash
+cd ~
+mkdir rat_trak
+cd rat_trak
+git clone https://github.com/your-repo/rat-trak.git
+cd ~/rat_trak/rat_trak_ws
+catkin_make
+source devel/setup.sh
+roslaunch rat_trak rat.launch
+```
+
 ## System Architecture
 1. **High-Speed Camera**: Mounted to a timing belt gantry for capturing detailed stride analysis.
 2. **Timing Belt Gantry**: Provides precise camera motion control.
