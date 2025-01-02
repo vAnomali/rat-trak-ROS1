@@ -33,6 +33,7 @@ This system enhances the yield of research data while reducing overhead costs an
 - **Team Advisor**: Dr. Andrew Spence
 - **Senior Design Instructor**: Dr. Hamid Heravi
 - **Team Members**: Chris Pullen, Ryan Loc, Darshan Patel, Fernanda Gutierrez
+- **Special Contributor**: Jared Levin
 
 ---
 
